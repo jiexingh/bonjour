@@ -5,10 +5,12 @@ import React from "react";
 import SocialCard from "./SocialCard";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { concatList, socialSnapList, workList } from '@/constants/index';
+import WorkCard from "./WorkCard";
 
 const GetLinkButton = ({cuClassName, onClonClick}:{ cuClassName?:string, onClonClick?: () => void;}) => (
   <button onClick={onClonClick} className={
-    cn("cursor-pointer justify-center border-2 border-black rounded-full py-2 px-8 md:flex md:mt-12", cuClassName)
+    cn("cursor-pointer justify-center items-center border-2 border-black rounded-full py-2 px-8 md:flex md:mt-12", cuClassName)
   }>
     <span>在应用中获取你的专属地址</span>
     <Image src="/assets/icons/arrow-right.svg" width={20} height={20} alt="arrow-right" className="size-5 inline-block" />
@@ -35,7 +37,7 @@ const SectionSlogan = () => {
       <div className="md:animate-slide-left md:[animation-delay:0.5s]">
         <h1 className='text-3xl md:text-4xl font-medium mt-10 mb-10 animate-slide-top'>👋🏻 Bonjour!</h1>
         <div className="text-center md:text-left">
-          <p className='text-3xl max-w-[200px] font-medium animate-slide-top [animation-delay:0.3s] md:max-w-max'>
+          <p className=' tracking-wide text-3xl max-w-[200px] font-medium animate-slide-top [animation-delay:0.3s] md:max-w-max'>
             科技创造者的<span className="text-highlight animate-slide-top [animation-delay:0.35s]">数字名片</span>
           </p>
           <p className='mt-4 text-slate-600 text-sm animate-slide-top [animation-delay:0.5s]'>🔗 链接创造的骄傲与喜悦</p>
@@ -63,32 +65,36 @@ const SectionSlogan = () => {
 
             <p className="block-title">联系我</p>
 
-            <div className="block-mt w-full border px-6 py-4 rounded-lg flex flex-row justify-around gap-2">
-              {/* 替换为你的社交图标 */}
-              <div className="size-10 rounded-full border flex justify-center items-center">
-                <Image src="/assets/logos/github.svg" width={20} height={20} alt="github" className="rounded-full overflow-clip" />
-              </div>
-              <div className="size-10 rounded-full border flex justify-center items-center">
-                <Image src="/assets/logos/github.svg" width={20} height={20} alt="github" className="rounded-full overflow-clip" />
-              </div>
-              <div className="size-10 rounded-full border flex justify-center items-center">
-                <Image src="/assets/logos/github.svg" width={20} height={20} alt="github" className="rounded-full overflow-clip" />
-              </div>
-              <div className="size-10 rounded-full border flex justify-center items-center">
-                <Image src="/assets/logos/github.svg" width={20} height={20} alt="github" className="rounded-full overflow-clip" />
-              </div>
-              {/* 其他图标 */}
+            <div className="block_container">
+                {concatList.map((icon, index) => (
+                    <div key={index} className="flex justify-center items-center">
+                        <div className="w-10 h-10 rounded-full border flex justify-center items-center">
+                            <Image 
+                                src={icon.src} 
+                                width={20} 
+                                height={20} 
+                                alt={icon.alt} 
+                                className="rounded-full overflow-clip"
+                            />
+                        </div>
+                    </div>
+                ))}
             </div>
 
             <p className="block-title">社交媒体</p>
+            <div className="w-full block-mt grid grid-cols-2 gap-2">
+              {socialSnapList.map((item) => (
+                    <SocialCard key={item.socialKey} {...item} />
+              ))}
+            </div>
 
-            <div className="block-mt grid grid-cols-2 gap-2">
-              <SocialCard />
-              <SocialCard />
-              <SocialCard />
-              <SocialCard />
-              <SocialCard />
-              <SocialCard />
+            <p className="block-title">作品</p>
+            <div className="w-full block-mt flex flex-col gap-4">
+              {
+                workList.map((work, index) => (
+                  <WorkCard key={index} {...work} />
+                ))
+              }
             </div>
           </div>
         </PhoneBox>
