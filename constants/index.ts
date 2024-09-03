@@ -1,11 +1,35 @@
 
-export const concatList = [
-    { src: "/assets/logos/wechat.svg", alt: "微信" },
-    { src: "/assets/logos/qq.svg", alt: "QQ" },
-    { src: "/assets/logos/email.svg", alt: "邮箱" },
-    { src: "/assets/logos/call.svg", alt: "电话" },
-    { src: "/assets/logos/discord.svg", alt: "Discord" },
-    { src: "/assets/logos/telegram.svg", alt: "Telegram" }
+export const concatList: ConcatMeProps[] = [
+    { 
+       socialKey:"wechat",
+       src: "/assets/logos/wechat.svg", 
+       alt: "微信"
+    },
+    { 
+        socialKey:"qq",
+        src: "/assets/logos/qq.svg", 
+        alt: "QQ" 
+    },
+    { 
+        socialKey:"email",
+        src: "/assets/logos/email.svg", 
+        alt: "邮箱" 
+    },
+    { 
+        socialKey:"mobile",
+        src: "/assets/logos/call.svg", 
+        alt: "电话",
+    },
+    { 
+        socialKey:"discord",
+        src: "/assets/logos/discord.svg",
+        alt: "Discord"
+     },
+    { 
+        socialKey: "telegram",
+        src: "/assets/logos/telegram.svg", 
+        alt: "Telegram" 
+    }
 ];
 
 export const socialSnapList:SocialCardProps[] = [
@@ -14,7 +38,8 @@ export const socialSnapList:SocialCardProps[] = [
         icon: "/assets/logos/github.svg",
         title: "GitHub",
         subtitle: "github.com",
-        btnText: "Follow"
+        btnText: "Follow",
+        buttonClassName: " bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90"
     },
     {
         socialKey:"doiuying",

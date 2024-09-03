@@ -1,8 +1,11 @@
+import InfoDetail from '@/components/InfoDetail'
 import React from 'react'
 
 const Create = () => {
   return (
-    <div>create Bonjour</div>
+    <div className="container mx-auto">
+      <InfoDetail isResponsive={true}/>
+    </div>
   )
 }
 

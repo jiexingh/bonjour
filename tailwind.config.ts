@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        highlight: "#6202FF"
+        highlight: "#6202FF",
+        xiaohongshu: "#FF2E4D"
       },
       keyframes: {
         'slide-top': {

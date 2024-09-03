@@ -8,6 +8,12 @@ declare interface SocialCardProps {
    buttonClassName?: string;
 }
 
+declare interface ConcatMeProps {
+   socialKey: string
+   src: string
+   alt: string
+}
+
 declare interface WorkCardCardProps {
    icon: string;
    name: string;

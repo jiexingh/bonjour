@@ -37,7 +37,11 @@
 
     /* sections */
     .block_container {
-      @apply mt-4 w-full grid grid-cols-4 gap-4 border shadow-sm py-4 px-2 rounded-lg;
+      @apply mt-4 w-full grid grid-cols-4  gap-4 border shadow-sm py-4 px-2 rounded-lg;
+    }
+
+    .md_block_container {
+      @apply mt-4 w-full grid grid-cols-4 gap-4 border shadow-sm py-4 px-2 rounded-lg md:grid-cols-6;
     }
 
     .block-title {

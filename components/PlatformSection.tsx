@@ -1,10 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import PlatformCard from './PlatformCard'
 
 const PlatformSection = () => {
   return (
-    <section className='container mx-auto flex flex-col items-center md:grid md:grid-cols-3 md:gap-2 animate-slide-top [animation-delay:0.35s]'>
+    <section className='container mx-auto px-4 flex flex-col items-center md:grid md:grid-cols-3 md:gap-2 animate-slide-top [animation-delay:0.35s]'>
         <div className="flex flex-col items-center py-8 gap-2 text-slate-600">
             <div className="flex flex-row items-center">
             <span>会使用</span> 
@@ -18,21 +17,19 @@ const PlatformSection = () => {
                 <span>上架应用</span>
             </div>
 
-            {/* TODO: 替换icon */}
             <div className="flex flex-row items-center">
                 <span>在</span>
+                <Image src="/assets/logos/youtube.svg" width={18} height={18} alt="douban" className="size-6 mx-2"/>
                 <Image src="/assets/logos/icons8-x.svg" width={18} height={18} alt="douban" className="size-6 mx-2"/>
                    <span>分享经验、思考和有趣的经历</span>
             </div>
 
-            {/* TODO: 替换icon */}
             <div className="flex flex-row items-center">
                 <span>在 </span>
                  <Image src="/assets/logos/douban.svg" width={18} height={18} alt="douban" className="size-6 mx-2"/> 
                  <span>记录喜爱的电影书籍</span> 
             </div>
 
-            {/* TODO: 替换icon */}
             <div className="flex flex-row items-center">
                 <span>在</span>
                  <Image src="/assets/logos/applemusic.svg" width={18} height={18} alt="applemusic" className="size-6 mx-2"/>
@@ -40,7 +37,6 @@ const PlatformSection = () => {
                  <span>收听喜爱的专辑</span> 
             </div>
 
-            {/* TODO: 替换icon */}
             <div className="flex flex-row items-center">
                 <span>游戏数据被保存在</span>
                   <Image src="/assets/logos/steam.svg" width={18} height={18} alt="steam" className="size-6 mx-2"/>

@@ -11,7 +11,7 @@ const WorkCard = ({ icon, name, links, description }:WorkCardCardProps) => {
 
             <h3 className="text-lg font-semibold">{name}</h3>
 
-        <p className='w-full line-clamp-2 text-xs text-gray-600'>{description}</p>
+            <p className='w-full line-clamp-2 text-xs text-gray-600'>{description}</p>
 
             <div className="w-full flex justify-end">
                 <Link href={links} className='flex flex-row items-center gap-1 focus:ring-highlight underline hover:no-underline focus:outline-none focus:ring-2'>
