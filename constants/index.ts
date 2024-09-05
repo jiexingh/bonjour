@@ -119,7 +119,7 @@ export const workList:WorkCardCardProps[] = [
     {
         icon: "/assets/logos/bonjour-logo.svg",
         name: "Bonjour",
-        links: "https://bonjour-lfgyfxn1j-hunterhans-projects.vercel.app/",
+        links: "https://bonjour-indol.vercel.app/",
         description: "科技创造者的数字名片."
     },
     {
