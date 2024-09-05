@@ -6,18 +6,19 @@ import SocialCard from './SocialCard';
 import { socialSnapList, workList } from '@/constants/index';
 import WorkCard from './WorkCard';
 import { cn } from '@/lib/utils';
+import { Button } from './ui/button';
 
-interface InfoDetailProps {
+interface ProfileCardProps {
     isResponsive?: boolean; // 可选属性
     concatList?: ConcatMeProps[];
     onConcatTap?: (index: number) => void; // 可选属性
 }
 
-const InfoDetail = ({ 
+const ProfileCard = ({ 
     isResponsive = false, 
     concatList, 
     onConcatTap 
-}: InfoDetailProps) => {
+}: ProfileCardProps) => {
     const descriptionLines = [
         '👻 躺平爱好者',
         '☁️ 旅游梦想家',
@@ -87,4 +88,4 @@ const InfoDetail = ({
     );
 };
 
-export default InfoDetail;
+export default ProfileCard;

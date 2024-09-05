@@ -1,10 +1,10 @@
-"use client"
+"use client";
+
 import Image from "next/image";
 import PhoneBox from "./PhoneBox";
-
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import InfoDetail from "./InfoDetail";
+import ProfileCard from "./ProfileCard";
 import { concatList } from "@/constants";
 
 const GetLinkButton = ({cuClassName, onClonClick}:{ cuClassName?:string, onClonClick?: () => void;}) => (
@@ -19,11 +19,9 @@ const GetLinkButton = ({cuClassName, onClonClick}:{ cuClassName?:string, onClonC
 const SectionSlogan = () => {
   const router = useRouter();
 
-  const handleGetLinkBtnTap = ()=>{
-    console.log('获取专属链接')
-    // router.push('/create');
-    router.push('/show/12345');
-  }
+  const handleGetLinkBtnTap = () => {
+    router.push('/profile/12345');
+  };
 
   return (
     <section className="container mx-auto flex flex-col items-center tracking-wide overflow-x-clip md:flex-row-reverse md:justify-around md:items-center md:min-h-screen">
@@ -43,7 +41,7 @@ const SectionSlogan = () => {
       {/* mobile phone */}
       <div className="mt-4 flex flex-col items-center animate-slide-top [animation-delay:0.6s] md:[animation-delay:0s]">
         <PhoneBox>
-          <InfoDetail concatList={concatList}/>
+          <ProfileCard concatList={concatList}/>
         </PhoneBox>
 
         <GetLinkButton cuClassName="mt-6 gap-1 items-center md:hidden" onClonClick={handleGetLinkBtnTap}/>   

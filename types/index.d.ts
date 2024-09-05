@@ -1,3 +1,6 @@
+
+declare type DrawerValueType = 'img' | 'text';
+
 declare interface SocialCardProps {
    socialKey: string;
    icon: string;
@@ -9,9 +12,11 @@ declare interface SocialCardProps {
 }
 
 declare interface ConcatMeProps {
-   socialKey: string
-   src: string
-   alt: string
+   socialKey: string;
+   src: string;
+   alt: string;
+   value: string;
+   valueType: DrawerValueType
 }
 
 declare interface WorkCardCardProps {

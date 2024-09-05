@@ -1,34 +1,46 @@
 
 export const concatList: ConcatMeProps[] = [
-    { 
-       socialKey:"wechat",
-       src: "/assets/logos/wechat.svg", 
-       alt: "微信"
+    {
+        socialKey: "wechat",
+        src: "/assets/logos/wechat.svg",
+        alt: "微信",
+        value: "/assets/illutes.jpg",
+        valueType: "img"
     },
-    { 
-        socialKey:"qq",
-        src: "/assets/logos/qq.svg", 
-        alt: "QQ" 
+    {
+        socialKey: "qq",
+        src: "/assets/logos/qq.svg",
+        alt: "QQ",
+        value: "12345678899",
+        valueType: "text"
     },
-    { 
-        socialKey:"email",
-        src: "/assets/logos/email.svg", 
-        alt: "邮箱" 
+    {
+        socialKey: "email",
+        src: "/assets/logos/email.svg",
+        alt: "邮箱",
+        value: "122334@qq.com",
+        valueType: "text"
     },
-    { 
-        socialKey:"mobile",
-        src: "/assets/logos/call.svg", 
+    {
+        socialKey: "mobile",
+        src: "/assets/logos/call.svg",
         alt: "电话",
+        value: "122334455556",
+        valueType: "text"
     },
-    { 
-        socialKey:"discord",
+    {
+        socialKey: "discord",
         src: "/assets/logos/discord.svg",
-        alt: "Discord"
-     },
-    { 
+        alt: "Discord",
+        value: "1223333",
+        valueType: "text"
+    },
+    {
         socialKey: "telegram",
-        src: "/assets/logos/telegram.svg", 
-        alt: "Telegram" 
+        src: "/assets/logos/telegram.svg",
+        alt: "Telegram",
+        value: "12334456666",
+        valueType: "text"
     }
 ];
 
