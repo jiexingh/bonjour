@@ -5,7 +5,7 @@ import ProfileCard from '@/components/ProfileCard';
 import { concatList } from '@/constants/index';
 import React, { useState } from 'react'
 
-const page = () => {
+const Profile = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [currentDrawerItem, setCurrentDrawerItem] = useState<ConcatMeProps | null>(null);
 
@@ -26,4 +26,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Profile
