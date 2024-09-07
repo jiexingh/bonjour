@@ -4,7 +4,7 @@ export const concatList: ConcatMeProps[] = [
         socialKey: "wechat",
         src: "/assets/logos/wechat.svg",
         alt: "微信",
-        value: "/assets/illutes.jpg",
+        value: "/illutes.jpg",
         valueType: "img"
     },
     {

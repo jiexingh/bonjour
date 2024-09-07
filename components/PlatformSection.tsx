@@ -51,9 +51,9 @@ const PlatformSection = () => {
         </div>
 
         <div className="mt-8 flex flex-col items-center gap-2 text-slate-600 text-center md:justify-center">
-            <p>希望帮助你<span className=' mx-2 text-black'>简单快速</span>地整理信息</p>
-            <p>为<span className=' mx-2 text-black'>潜在的朋友 / 合作方</span></p>
-            <p>提供<span className=' mx-2 text-black'>了解你的窗口</span></p>
+            <p>希望帮助你<span className=' mx-2 text-black dark:text-white'>简单快速</span>地整理信息</p>
+            <p>为<span className=' mx-2 text-black dark:text-white'>潜在的朋友 / 合作方</span></p>
+            <p>提供<span className=' mx-2 text-black dark:text-white'>了解你的窗口</span></p>
         </div>
     </section>
   )

@@ -1,4 +1,12 @@
 
+declare module '@heroicons/react/outline' {
+  import { FunctionComponent, SVGProps } from 'react';
+
+  export const SunIcon: FunctionComponent<SVGProps<SVGSVGElement>>;
+  export const MoonIcon: FunctionComponent<SVGProps<SVGSVGElement>>;
+  // 添加其他需要的图标
+}
+
 declare type DrawerValueType = 'img' | 'text';
 
 declare interface SocialCardProps {
