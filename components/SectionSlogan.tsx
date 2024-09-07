@@ -32,7 +32,7 @@ const SectionSlogan = () => {
           <p className='text-3xl max-w-[200px] font-medium animate-slide-top [animation-delay:0.3s] md:max-w-max'>
             科技创造者的<span className="text-highlight animate-slide-top [animation-delay:0.35s]">数字名片</span>
           </p>
-          <p className='mt-4 text-secondary-color text-sm animate-slide-top [animation-delay:0.5s]'>🔗 链接创造的骄傲与喜悦</p>
+          <p className='mt-4 text-secondary-color text-base animate-slide-top [animation-delay:0.5s]'>🔗 链接创造的骄傲与喜悦</p>
         </div>
 
         <GetLinkButton cuClassName="hidden mt-6 animate-slide-top [animation-delay:0.55s]" onClonClick={handleGetLinkBtnTap}/>

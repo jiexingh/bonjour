@@ -43,7 +43,7 @@ const PlatformCard = () => {
             </div>
         </div>
 
-        <div className="mt-4 mb-4 text-slate-600 text-center md:text-2xl">
+        <div className="mt-4 mb-4 text-slate-600 dark:text-white/70 text-center md:text-2xl">
             <p>记录每一份创造的喜悦</p>
         </div>
     </div>

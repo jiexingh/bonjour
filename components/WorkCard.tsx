@@ -63,8 +63,8 @@ const WorkCard = ({ icon, name, links, description }:WorkCardCardProps) => {
 
                 <div className="w-full flex justify-end">
                     <Link href={links} className='flex flex-row items-center gap-1 focus:ring-highlight underline hover:no-underline focus:outline-none focus:ring-2'>
-                        <Image src="/assets/logos/browser.svg" width={16} height={16} alt='browser'/>
-                        <span className='text-black font-medium underline-offset-4'>访问</span>
+                        <Image src="/assets/logos/browser.svg" width={16} height={16} alt='browser' className='text-white'/>
+                        <span className='text-black dark:text-white font-medium underline-offset-4'>访问</span>
                     </Link>
             </div>
         </div>

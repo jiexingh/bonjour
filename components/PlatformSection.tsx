@@ -4,7 +4,7 @@ import Image from 'next/image'
 const PlatformSection = () => {
   return (
     <section className='container mx-auto px-4 flex flex-col items-center md:grid md:grid-cols-3 md:gap-2 animate-slide-top [animation-delay:0.35s]'>
-        <div className="flex flex-col items-center py-8 gap-2 text-slate-600">
+        <div className="flex flex-col items-center py-8 gap-2 text-slate-600 dark:text-white/70">
             <div className="flex flex-row items-center">
             <span>会使用</span> 
                 <Image src="/assets/logos/github.svg" width={18} height={18} alt="github" className="size-6 mx-2"/> 
@@ -50,10 +50,10 @@ const PlatformSection = () => {
             <p className=' text-highlight'>一份数字名片 / 说明书</p>
         </div>
 
-        <div className="mt-8 flex flex-col items-center gap-2 text-slate-600 text-center md:justify-center">
-            <p>希望帮助你<span className=' mx-2 text-black dark:text-white'>简单快速</span>地整理信息</p>
-            <p>为<span className=' mx-2 text-black dark:text-white'>潜在的朋友 / 合作方</span></p>
-            <p>提供<span className=' mx-2 text-black dark:text-white'>了解你的窗口</span></p>
+        <div className="mt-8 flex flex-col items-center gap-2 text-center md:justify-center">
+            <p>希望帮助你<span className=' mx-2 text-highlight'>简单快速</span>地整理信息</p>
+            <p>为<span className=' mx-2 text-highlight'>潜在的朋友 / 合作方</span></p>
+            <p>提供<span className=' mx-2 text-highlight'>了解你的窗口</span></p>
         </div>
     </section>
   )

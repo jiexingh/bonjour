@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const Create = () => {
+const Edit = () => {
   return (
     <div className="container mx-auto">
       comming soon
@@ -9,4 +9,4 @@ const Create = () => {
   )
 }
 
-export default Create
+export default Edit
