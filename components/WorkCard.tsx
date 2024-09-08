@@ -4,54 +4,54 @@ import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
 
 const WorkCard = ({ icon, name, links, description }:WorkCardCardProps) => {
-   const cardRef = useRef<HTMLDivElement>(null);
+//    const cardRef = useRef<HTMLDivElement>(null);
 
-    const xPercentage = useMotionValue(50);
-    const yPercentage = useMotionValue(0);
-    // [mask-image:radial-gradient(80px_80px_at_0%_0%,black,transparent)]
-    const maskImage = useMotionTemplate`radial-gradient(80px 80px at ${xPercentage}% ${yPercentage}%, black,transparent)`
+//     const xPercentage = useMotionValue(50);
+//     const yPercentage = useMotionValue(0);
+//     // [mask-image:radial-gradient(80px_80px_at_0%_0%,black,transparent)]
+//     const maskImage = useMotionTemplate`radial-gradient(80px 80px at ${xPercentage}% ${yPercentage}%, black,transparent)`
 
 
-    const animationCircumFerenceCard = ()=>{
-       if(!cardRef.current) return
+//     const animationCircumFerenceCard = ()=>{
+//        if(!cardRef.current) return
 
-        const { width, height} = cardRef.current?.getBoundingClientRect();
-        const circumference = width * 2 + height * 2;
+//         const { width, height} = cardRef.current?.getBoundingClientRect();
+//         const circumference = width * 2 + height * 2;
 
-        const times = [
-            0, 
-            width / circumference,
-            (width + height) / circumference,
-            (width * 2 + height) / circumference,
-            1
-        ];
+//         const times = [
+//             0, 
+//             width / circumference,
+//             (width + height) / circumference,
+//             (width * 2 + height) / circumference,
+//             1
+//         ];
 
-        const options: ValueAnimationTransition = {
-            times,
-            duration: 4,
-            repeat: Infinity,
-            ease: 'linear',
-            repeatType: 'loop'
-        };
+//         const options: ValueAnimationTransition = {
+//             times,
+//             duration: 4,
+//             repeat: Infinity,
+//             ease: 'linear',
+//             repeatType: 'loop'
+//         };
 
-        animate(xPercentage,[0, 100, 100, 0, 0],options);
-        animate(yPercentage,[0, 0, 100, 100, 0],options);
-    }
+//         animate(xPercentage,[0, 100, 100, 0, 0],options);
+//         animate(yPercentage,[0, 0, 100, 100, 0],options);
+//     }
 
-    useEffect(()=>{
- animationCircumFerenceCard()
-    },[])
+//     useEffect(()=>{
+//  animationCircumFerenceCard()
+//     },[])
 
     return (
         <div
-        ref={cardRef}
+       
         className="relative flex flex-col items-start gap-2 border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <motion.div 
+            {/* <motion.div 
             style={
                 {
                     maskImage
                 }
-            } className=" absolute inset-0 -m-px border border-[#A369FF] rounded-lg" />
+            } className=" absolute inset-0 -m-px border border-[#A369FF] rounded-lg" /> */}
           
             <div className="flex justify-center items-center border rounded-lg p-2">
                 <Image src={icon} width={30} height={30} alt={name} className='mix-blend-overlay'/>
