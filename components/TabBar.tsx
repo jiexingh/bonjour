@@ -22,11 +22,14 @@ const tabs: TabItem[] = [
   }
 ]
 
-const TabBar = () => {
-    const router = useRouter();
-    const bonjourId = '123456';
-    const userId = 'userid_123'
+interface TabBarProps {
+  userId?: string;
+  bonjourId?: string
+}
 
+const TabBar = ({userId,bonjourId}:TabBarProps) => {
+    const router = useRouter();
+  
     const handleTabItemTap = (tabItem:TabItem) => {
         router.push(`${tabItem.link}?userId=${userId}&bonjourId=${bonjourId}`)
     };

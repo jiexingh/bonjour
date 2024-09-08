@@ -5,11 +5,17 @@ import TabBar from '@/components/TabBar';
 import ThemeToggle from '@/components/ThemeToggle';
 import { HomeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const QrShare = () => {
-  // TODO: 替换新的二维码生成参数
-  const qrStringValue = '123455'
+  const [qrStringValue, setQrStringValue] = useState("");
+
+  useEffect(() => {
+    // 在客户端获取当前url 拼接 scencId
+    if (typeof window !== 'undefined') {
+      setQrStringValue(`${window.location.href.replace('localhost','192.168.1.6')}&sceneId=10000`)
+    }
+  }, [qrStringValue]);
 
   return (
     <div className='container mx-auto h-screen overflow-clip'>
@@ -20,10 +26,12 @@ const QrShare = () => {
         <ThemeToggle />
       </div>
 
-      <div className="min-h-screen px-2 py-8 flex flex-col items-center gap-10 animate-slide-top">
+      <div className="min-h-screen px-2 pt-4 flex flex-col items-center gap-4 animate-slide-top">
         <ProfileUserInfo />
 
-        <ShareQRCode value={qrStringValue}/>
+        {qrStringValue ? <ShareQRCode value={qrStringValue}/>:(
+          <p>loading...</p>
+        )}
       </div>
 
       <TabBar/>

@@ -21,7 +21,7 @@ const tabs: TabItem[] = [
   }
 ]
 
-const ActionTabBar = ({handleTabTap}:{handleTabTap:()=>void}) => {
+const ActionTabBar = ({handleTabTap}:{handleTabTap:(text:string)=>void}) => {
   return (
     <div className="sticky z-10 bottom-6 flex justify-center py-6 px-4">
         <div className="w-full backdrop-blur-sm rounded-2xl py-4 flex justify-around items-center border">
@@ -29,7 +29,7 @@ const ActionTabBar = ({handleTabTap}:{handleTabTap:()=>void}) => {
             const IconComponent = tabItem.icon;
 
             return (
-                <div key={tabItem.text} onClick={tabItem.text=='delete'? handleTabTap : ()=>{}} className="flex flex-col items-center cursor-pointer">
+                <div key={tabItem.text} onClick={()=> handleTabTap(tabItem.text)} className="flex flex-col items-center cursor-pointer">
                     <IconComponent className={`h-8 w-8 ${tabItem.className}`}/>
                 {/* <span className="text-sm">{tabItem.text}</span> */}
                 </div>

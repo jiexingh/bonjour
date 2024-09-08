@@ -20,7 +20,9 @@ const SectionSlogan = () => {
   const router = useRouter();
 
   const handleGetLinkBtnTap = () => {
-    router.push('/profile/12345');
+    const currentUserId = '51f0193c-f035-57bc-bdc1-92aa4ec4a44c';
+    
+    router.push(`/profile?userId=${currentUserId}`);
   };
 
   return (

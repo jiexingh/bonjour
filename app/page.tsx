@@ -12,8 +12,9 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
 
+  const currentUserId = '51f0193c-f035-57bc-bdc1-92aa4ec4a44c';
   const handleGetLinkBtnTap = () => {
-    router.push('/profile/12345');
+    router.push(`/profile?userId=${currentUserId}`);
   };
   
   return (

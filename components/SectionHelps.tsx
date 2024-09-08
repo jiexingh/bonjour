@@ -5,7 +5,7 @@ const SectionHelps = () => {
    <section className='mt-6 container mx-auto flex flex-col items-center tracking-wider animate-slide-top [animation-delay:0.5s]'>
         <h2 className='text-center text-highlight section-heading tracking-wider'>帮助你和世界建立连接</h2>
 
-        <div className="p-6 indent-8 text-lg text-slate-600 dark:text-white/70 text-center">
+        <div className="p-6 indent-8 text-slate-600 dark:text-white/70 text-center">
             当然像我们这样有趣的人，在展示
             <br className="md:hidden"/>
             <span className='text-black dark:text-white'> 创造的作品</span> / <span className='text-black dark:text-white'>有趣的经历</span> / <span className='text-black dark:text-white'>专业的能力</span> 外，
