@@ -6,6 +6,7 @@ import SocialCard from './SocialCard';
 import { socialSnapList, workList } from '@/constants/index';
 import WorkCard from './WorkCard';
 import { cn } from '@/lib/utils';
+import ProfileUserInfo from './ProfileUserInfo';
 
 interface ProfileCardProps {
     isResponsive?: boolean; // 可选属性
@@ -26,7 +27,8 @@ const ProfileCard = ({
 
     return (
         <div className="py-8 px-2 flex flex-col items-center w-full box-border animate-slide-top [animation-delay:0.65s]">
-            <Image 
+            <ProfileUserInfo />
+            {/* <Image 
                 src="/assets/avator/avator-1.jpeg" 
                 width={100} 
                 height={100} 
@@ -34,8 +36,8 @@ const ProfileCard = ({
                 className="rounded-full object-cover shadow-md" 
             />
             <h1 className="mt-6 text-3xl font-medium tracking-tighter">HunterHan</h1>
-            <p className="mt-2 w-full text-sm truncate text-center text-secondary-color">Frontend / ios Developer / XR Content Creator</p>
-
+            <p className="mt-2 w-full text-sm truncate text-center text-secondary-color">Frontend / ios Developer / XR Content Creator</p> */}
+{/* 
             <div className="mt-2 text-sm text-center leading-relaxed description whitespace-pre-wrap">
                 {descriptionLines.map((line, index) => (
                     <React.Fragment key={index}>
@@ -43,7 +45,7 @@ const ProfileCard = ({
                         {index < descriptionLines.length - 1 && <br />}
                     </React.Fragment>
                 ))}
-            </div>
+            </div> */}
 
             {concatList && concatList.length > 0 ? (
                 <>

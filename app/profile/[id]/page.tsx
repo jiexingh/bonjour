@@ -4,7 +4,6 @@ import PlatformDrawer from '@/components/PlatformDrawer';
 import ProfileCard from '@/components/ProfileCard';
 import ThemeToggle from '@/components/ThemeToggle';
 import { concatList } from '@/constants/index';
-import { ThemeProvider } from '@/lib/hooks/ThemeContext';
 import React, { useState } from 'react';
 import { HomeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -42,7 +41,6 @@ const Profile = () => {
   };
   
   return (
-    <ThemeProvider>
       <div className="container mx-auto min-h-screen"> {/* Ensure container has a height */}
         <div className="sticky backdrop-blur-sm top-0 p-5 flex justify-between items-center z-10"> {/* Add z-index and background */}
           <Link href="/" className='p-2 rounded-xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center cursor-pointer shadow-md'>
@@ -71,7 +69,6 @@ const Profile = () => {
          openConfirmDialog && <ConfirmDeleteDialog open={openConfirmDialog} onOpenChange={handleOpenConfirmDialogChange}/>
         }
       </div>
-    </ThemeProvider>
   );
 };
 
