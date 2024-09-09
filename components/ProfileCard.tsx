@@ -53,7 +53,6 @@ const ProfileCard = ({
                 </>
             ) : null}
           
-
             <p className="block-title">社交媒体</p>
             <div className={cn("w-full block-mt grid grid-cols-2 gap-2", isResponsive ? "md:grid-cols-4" : "")}>
                 {socialSnapList.map(item => (
