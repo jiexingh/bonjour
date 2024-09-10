@@ -1,11 +1,13 @@
 "use client"
 
+import CallAction from "@/components/CallAction";
 import Footer from "@/components/Footer";
 import PlatformCard from "@/components/PlatformCard";
 import PlatformSection from "@/components/PlatformSection";
 import SectionDescription from "@/components/SectionDescription";
 import SectionHelps from "@/components/SectionHelps";
 import SectionSlogan from "@/components/SectionSlogan";
+import Testimonials from "@/components/Testimonials";
 import ThemeToggle from "@/components/ThemeToggle";
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from "next/navigation";
@@ -39,6 +41,10 @@ export default function Home() {
         <PlatformCard />
 
         <SectionHelps/>
+
+        <Testimonials/>
+
+        <CallAction/>
 
         <Footer/>
       </main>
