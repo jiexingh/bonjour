@@ -46,26 +46,28 @@ export const concatList: ConcatMeProps[] = [
 
 export const socialSnapList:SocialCardProps[] = [
     {
-        socialKey:"gitHub",
+        socialKey: "gitHub",
         icon: "/assets/logos/github.svg",
         title: "GitHub",
         subtitle: "github.com",
         btnText: "Follow",
-        buttonClassName: " bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90"
+        buttonClassName: "bg-black text-white dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90"
     },
     {
         socialKey:"doiuying",
         icon: "/assets/logos/douying.svg",
         title: "抖音",
         subtitle: "douyin.com/",
-        btnText: "关注"
+        btnText: "关注",
+        buttonClassName: "bg-black text-white dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90"
     },
     {
         socialKey: "tiktok",
         icon: "/assets/logos/tiktok.svg",
         title: "Tiktok",
         subtitle: "tiktok.com",
-        btnText: "Follow"
+        btnText: "Follow",
+        buttonClassName: "bg-black text-white dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90"
     },
     {
         socialKey: "channels.weixin",
@@ -73,8 +75,7 @@ export const socialSnapList:SocialCardProps[] = [
         title: "视频号",
         subtitle: "channels.weixin.com",
         btnText: "关注",
-        iconClassName: "text-white bg-[#EDA150] hover:bg-[#EDA150]/90",
-        buttonClassName: "text-white bg-[#EDA150] hover:bg-[#EDA150]/90"
+        buttonClassName: "text-white bg-orange-500 hover:bg-orange-500/90"
     },
     {
         socialKey: "xiaohongshu",
@@ -82,8 +83,7 @@ export const socialSnapList:SocialCardProps[] = [
         title: "小红书",
         subtitle: "xiaohongshu.com",
         btnText: "关注",
-        iconClassName: "text-white bg-[#FF2E4D] hover:bg-[#FF2E4D]/90",
-        buttonClassName: "text-white bg-[#FF2E4D] hover:bg-[#FF2E4D]/90"
+        buttonClassName: "text-white bg-rose-600 hover:bg-rose-600/90"
     },
     {
         socialKey: "zhihu",
@@ -100,8 +100,7 @@ export const socialSnapList:SocialCardProps[] = [
         title: "网易云",
         subtitle: "music.l63.com",
         btnText: "关注",
-        iconClassName: "text-white bg-[#FF2E4D] hover:bg-[#FF2E4D]/90",
-        buttonClassName: "text-white bg-[#FF2E4D] hover:bg-[#FF2E4D]/90"
+        buttonClassName: "text-white bg-rose-600 hover:bg-rose-600/90"
     },
     {
         socialKey: "bilibili",
@@ -109,8 +108,7 @@ export const socialSnapList:SocialCardProps[] = [
         title: "BiliBili",
         subtitle: "bilibili.com",
         btnText: "关注",
-        iconClassName: "text-white bg-[#FF2E4D] hover:bg-[#FF2E4D]/90",
-        buttonClassName: "text-white bg-[#FF2E4D] hover:bg-[#FF2E4D]/90"
+        buttonClassName: "text-white bg-pink-700 hover:bg-pink-700/90"
     },
 ];
 

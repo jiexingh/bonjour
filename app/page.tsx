@@ -1,5 +1,6 @@
 "use client"
 
+import Footer from "@/components/Footer";
 import PlatformCard from "@/components/PlatformCard";
 import PlatformSection from "@/components/PlatformSection";
 import SectionDescription from "@/components/SectionDescription";
@@ -18,7 +19,7 @@ export default function Home() {
   };
   
   return (
-      <main className="flex flex-col items-center">
+      <main>
         <div onClick={handleGetLinkBtnTap} className="w-full flex justify-center gap-2 items-center bg-black text-white py-3 text-sm dark:underline dark:underline-offset-4 cursor-pointer">
           <p>我们正在寻找10000名天使用户,期待你的加入</p>
           <ArrowRightIcon className="size-4"/>
@@ -38,6 +39,8 @@ export default function Home() {
         <PlatformCard />
 
         <SectionHelps/>
+
+        <Footer/>
       </main>
   );
 }
