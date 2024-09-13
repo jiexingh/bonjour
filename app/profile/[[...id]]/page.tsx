@@ -4,25 +4,32 @@ import PlatformDrawer from '@/components/PlatformDrawer';
 import ProfileCard from '@/components/ProfileCard';
 import ThemeToggle from '@/components/ThemeToggle';
 import { concatList } from '@/constants/index';
-import React, { useState } from 'react';
-import { HomeIcon } from '@heroicons/react/24/outline';
+import React, { useEffect, useState, useCallback } from 'react';
+import { HomeIcon, LinkIcon, TrashIcon, PencilIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import TabBar from '@/components/TabBar';
-import { useSearchParams } from 'next/navigation'; // Import useSearchParams
-import ActionTabBar from '@/components/ActionTabBar';
+import { useSearchParams } from 'next/navigation';
 import ConfirmDeleteDialog from '@/components/ConfirmDeleteDialog';
+import FixedActionIcons, { ActionIcon, OnActionTapParams } from '@/components/FixedActionIcons';
+import { buildUrlWithParams } from '@/lib/utils';
+import useCopyToClipboard from '@/lib/hooks/useCopyToClipboard';
+import { useToast } from "@/hooks/use-toast";
 
 const Profile = () => {
-  // TODO: 替换成真正的用户id
   const searchParams = useSearchParams();
-  const userId = searchParams.get('userId'); // 获取 userId
-  const sceneId = searchParams.get('sceneId'); // 获取 来源 sceneId 二维码 sceneId
+  
+  const userId = searchParams.get('userId');
+  const bonjourId = searchParams.get('bonjourId');
+  const sceneId = searchParams.get('sceneId');
   const currentUserId = '51f0193c-f035-57bc-bdc1-92aa4ec4a44c';
-  console.log('sceneId',sceneId)
-
-
+  
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const [currentDrawerItem, setCurrentDrawerItem] = useState<ConcatMeProps | null>(null);
+  const [openConfirmDialog, setOpenConfirmDialog] = useState<boolean>(false);
+  const [toastShown, setToastShown] = useState<boolean>(false);
+
+  const { copied, copy } = useCopyToClipboard();
+  const { toast } = useToast();
 
   const handleOnOpenChange = (value: boolean) => {
     setOpenDrawer(value);
@@ -33,26 +40,46 @@ const Profile = () => {
     setOpenDrawer(true);
   };
 
-  const [openConfirmDialog, setOpenConfirmDialog] = useState<boolean>(false);
-
-  const handleOpenConfirmDialogChange = (value: boolean) => {
-    setOpenConfirmDialog(value);
-  };
-
-  const handleActionTabTap = (actionText:string) => {
-    console.log('----handleActionTabTap-actionText--',actionText)
-    switch (actionText) {
-      case 'delete':
-        setOpenConfirmDialog(true);
-        break;
-      case 'share':
-        const {origin,pathname} = window.location
-       const sharePath = `${origin}${pathname}`;
-       console.log('sharePath',sharePath)
-        break
-    }
+  const actionIcons: ActionIcon[] = [
+    { icon: LinkIcon, action: 'copy', className: "size-2"},
    
-  };
+  ];
+
+  const userActionIcons:ActionIcon[] =[
+     { icon: PencilIcon, action: 'edit', className: "size-2"},
+    { icon: LinkIcon, action: 'copy', className: "size-2"},
+    { icon: TrashIcon, action: 'delete', className: "size-2 text-red-500"}
+  ];
+
+  const handleActionTap = useCallback(({ actionItem }: OnActionTapParams) => {
+    const { action } = actionItem;
+
+    if (action === 'delete') {
+      setOpenConfirmDialog(true);
+    } else if (action === 'copy') {
+      const { origin, pathname } = window.location;
+      const searchParams = {
+        userId,
+        bonjourId,
+        shareFromUserId: currentUserId,
+        sceneId: 1001
+      };
+      const shareBasePath = `${origin}${pathname}`;
+      const shareUrl = buildUrlWithParams(shareBasePath, searchParams);
+      copy(shareUrl);
+    }
+  }, [userId, bonjourId, currentUserId, copy]);
+
+  useEffect(() => {
+    if (copied && !toastShown) {
+      toast({ duration: 650, description: "当前链接复制成功" });
+      setToastShown(true);
+    }
+
+    if (!copied) {
+      setToastShown(false); // 允许再次显示
+    }
+  }, [copied, toast, toastShown]);
 
   return (
     <div className="container mx-auto min-h-screen">
@@ -75,13 +102,11 @@ const Profile = () => {
         onConcatTap={handleConcatTap} 
       />
 
-      {
-        currentUserId === userId ? <TabBar userId={currentUserId}/> : <ActionTabBar handleTabTap={handleActionTabTap}/>
-      }
+      {currentUserId === userId && <TabBar userId={currentUserId} />}
 
-      {
-        openConfirmDialog && <ConfirmDeleteDialog open={openConfirmDialog} onOpenChange={handleOpenConfirmDialogChange}/>
-      }
+      <FixedActionIcons actionIcons={ currentUserId==userId ? userActionIcons: actionIcons} onActionTap={handleActionTap} />
+
+      {openConfirmDialog && <ConfirmDeleteDialog open={openConfirmDialog} onOpenChange={setOpenConfirmDialog} />}
     </div>
   );
 };
