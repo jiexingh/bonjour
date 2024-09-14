@@ -17,8 +17,8 @@ const tabs: TabItem[] = [
   },
   {
     icon: WalletIcon,
-    text: 'wallets',
-    link: '/wallets'
+    text: 'collections',
+    link: '/collections'
   }
 ]
 

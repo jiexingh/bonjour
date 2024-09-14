@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const walletList = [
+const collectionList = [
   {
     bonjourId:'13d22b2a-ca6f-5ed3-8238-b24b8b1076d3',
     userId: '51f0193c-f035-57bc-bdc1-92aa4ec4a44c',
@@ -65,11 +65,11 @@ const walletList = [
   }
 ]
 
-const Wallet = () => {
+const Collections = () => {
   const router = useRouter();
 
   const handleItemTap = (index:number)=>{
-    const {userId, bonjourId} = walletList[index];
+    const {userId, bonjourId} = collectionList[index];
     router.replace(`/profile?userId=${userId}&bonjourId=${bonjourId}`);
   };
 
@@ -84,13 +84,13 @@ const Wallet = () => {
   
       <div className="min-h-screen p-5 animate-slide-top">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {walletList.map((wallet, index) => (
-            <div onClick={()=> handleItemTap(index)} key={wallet.userId} className="flex flex-col items-start gap-2 border rounded-2xl p-4 shadow-sm hover:shadow-md cursor-pointer">
-              <Image src={wallet.avator} alt='avator' width={60} height={60} className="size-16 rounded-full object-cover" />
+          {collectionList.map((collection, index) => (
+            <div onClick={()=> handleItemTap(index)} key={collection.userId} className="flex flex-col items-start gap-2 border rounded-2xl p-4 shadow-sm hover:shadow-md cursor-pointer">
+              <Image src={collection.avator} alt='avator' width={60} height={60} className="size-16 rounded-full object-cover" />
 
-              <p className='w-full font-bold truncate'>{ wallet.name }</p>
-              <p className='w-full truncate text-sm'>{ wallet.desc }</p>
-              <p className='w-full truncate text-sm'>{ wallet.desc.join(',') }</p>
+              <p className='w-full font-bold truncate'>{ collection.name }</p>
+              <p className='w-full truncate text-sm'>{ collection.desc }</p>
+              <p className='w-full truncate text-sm'>{ collection.desc.join(',') }</p>
             </div>
           ))}
         </div>
@@ -100,4 +100,4 @@ const Wallet = () => {
   );
 };
 
-export default Wallet;
+export default Collections;

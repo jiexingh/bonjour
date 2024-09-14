@@ -1,7 +1,7 @@
 "use client"
 
 import PhoneBox from "./PhoneBox";
-import { cn } from "@/lib/utils";
+import { appendParamsToPath, cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import ProfileCard from "./ProfileCard";
 import { concatList } from "@/constants";
@@ -16,13 +16,22 @@ const GetLinkButton = ({cuClassName, onClonClick}:{ cuClassName?:string, onClonC
   </button>
 );
 
-const SectionSlogan = () => {
+interface SectionSloganProps {
+   userId: string | null | undefined
+   bonjourId: string | null | undefined
+}
+
+const SectionSlogan = ({userId,bonjourId}:SectionSloganProps) => {
   const router = useRouter();
 
   const handleGetLinkBtnTap = () => {
-    const currentUserId = '51f0193c-f035-57bc-bdc1-92aa4ec4a44c';
-    
-    router.push(`/profile?userId=${currentUserId}`);
+    const searchParams = {
+      userId,
+      bonjourId
+    };
+    const path = appendParamsToPath(`/profile`, searchParams);
+
+    router.push(path);
   };
 
   return (

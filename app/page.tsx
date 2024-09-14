@@ -9,15 +9,30 @@ import SectionHelps from "@/components/SectionHelps";
 import SectionSlogan from "@/components/SectionSlogan";
 import Testimonials from "@/components/Testimonials";
 import ThemeToggle from "@/components/ThemeToggle";
+import { appendParamsToPath } from "@/lib/utils";
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from "next/navigation";
+import { useCallback } from "react";
 
 export default function Home() {
   const router = useRouter();
 
+  // TODO: 替换成真实的用户信息
   const currentUserId = '51f0193c-f035-57bc-bdc1-92aa4ec4a44c';
+  const bonjourId ='13d22b2a-ca6f-5ed3-8238-b24b8b1076d3';
+  
+  const generateShareUrl = useCallback(() => {
+    const searchParams = {
+      userId: currentUserId,
+      bonjourId
+    };
+    return appendParamsToPath(`/profile`, searchParams);
+  }, [currentUserId]);
+
   const handleGetLinkBtnTap = () => {
-    router.push(`/profile?userId=${currentUserId}`);
+    const path = generateShareUrl();
+    console.log('path',path)
+    router.push(path);
   };
   
   return (
@@ -32,7 +47,7 @@ export default function Home() {
           <ThemeToggle/>
         </div>
 
-        <SectionSlogan/>
+        <SectionSlogan userId={currentUserId} bonjourId={bonjourId}/>
         
         <SectionDescription/>
 

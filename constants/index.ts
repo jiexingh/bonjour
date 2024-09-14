@@ -112,7 +112,6 @@ export const socialSnapList:SocialCardProps[] = [
     },
 ];
 
-
 export const workList:WorkCardCardProps[] = [
     {
         icon: "/assets/logos/bonjour-logo.svg",
@@ -133,3 +132,11 @@ export const workList:WorkCardCardProps[] = [
         description: "The XRMOD Engine is an XR construction system built on the OpenXR protocol. It supports not only VR (Virtual Reality), AR (Augmented Reality), and MR (Mixed Reality), but also traditional screen-based methods."
     }
 ];
+
+/**
+ * 场景code
+ * @COPY 复制
+ */
+export enum ScenceCode {
+  COPY = 1000
+}
