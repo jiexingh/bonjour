@@ -77,7 +77,7 @@ const QrShare: React.FC = () => {
         onActionTap={handleActionTap} 
       />
 
-      <TabBar />
+      <TabBar userId={currentUserId} bonjourId={bonjourId} />
     </div>
   );
 }

@@ -68,6 +68,9 @@ const collectionList = [
 const Collections = () => {
   const router = useRouter();
 
+  const currentUserId = '51f0193c-f035-57bc-bdc1-92aa4ec4a44c';
+  const bonjourId ='13d22b2a-ca6f-5ed3-8238-b24b8b1076d3';
+
   const handleItemTap = (index:number)=>{
     const {userId, bonjourId} = collectionList[index];
     router.replace(`/profile?userId=${userId}&bonjourId=${bonjourId}`);
@@ -95,7 +98,8 @@ const Collections = () => {
           ))}
         </div>
       </div>
-      <TabBar />
+
+      <TabBar userId={currentUserId} bonjourId={bonjourId} />
     </div>
   );
 };

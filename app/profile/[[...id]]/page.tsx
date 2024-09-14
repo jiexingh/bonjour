@@ -98,6 +98,11 @@ const Profile: React.FC = () => {
         { icon: TrashIcon, action: 'delete', className: 'size-2 text-red-500' },
     ];
 
+    const userCollectedActionIcons: ActionIcon[] = [
+        { icon: LinkIcon, action: 'copy', className: 'size-2' },
+        { icon: TrashIcon, action: 'delete', className: 'size-2 text-red-500' },
+    ];
+
     const handleActionTap = useCallback(({ actionItem }: OnActionTapParams) => {
         const { action } = actionItem;
 
@@ -120,6 +125,9 @@ const Profile: React.FC = () => {
         const fetchData = async () => {
             await sleep(300);
             setIsLoading(false);
+            // 随机设置 isCollected 为 true 或 false
+            const randomValue = Math.random() >= 0.5; // 50% 概率
+            setIsCollected(randomValue);
         };
 
         fetchData();
@@ -167,7 +175,7 @@ const Profile: React.FC = () => {
 
             {/* 悬浮操作 */}
             <FixedActionIcons
-                actionIcons={currentUserId === userId ? userActionIcons : actionIcons}
+                actionIcons={currentUserId === userId ? userActionIcons : isCollected ? userCollectedActionIcons : actionIcons}
                 onActionTap={handleActionTap}
             />
 
