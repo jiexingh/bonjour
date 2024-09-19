@@ -1,18 +1,18 @@
 "use client"
 
-import CallAction from "@/components/CallAction";
-import Footer from "@/components/Footer";
+import Footer from "@/components/landing-sections/Footer";
+import SectionSlogan from "@/components/landing-sections/SectionSlogan";
 import PlatformCard from "@/components/PlatformCard";
-import PlatformSection from "@/components/PlatformSection";
-import SectionDescription from "@/components/SectionDescription";
-import SectionHelps from "@/components/SectionHelps";
-import SectionSlogan from "@/components/SectionSlogan";
-import Testimonials from "@/components/Testimonials";
+import PlatformSection from "@/components/landing-sections/PlatformSection";
+import SectionDescription from "@/components/landing-sections/SectionDescription";
+import SectionHelps from "@/components/landing-sections/SectionHelps";
+import Testimonials from "@/components/landing-sections/Testimonials";
 import ThemeToggle from "@/components/ThemeToggle";
 import { appendParamsToPath } from "@/lib/utils";
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
+import CallAction from "@/components/landing-sections/CallAction";
 
 export default function Home() {
   const router = useRouter();

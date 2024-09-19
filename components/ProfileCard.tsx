@@ -44,7 +44,7 @@ const ProfileCard = ({
                                         width={20}
                                         height={20}
                                         alt={icon.alt}
-                                        className="rounded-full overflow-clip" 
+                                        className="svg-icon-img" 
                                     />
                                 </div>
                             </div>

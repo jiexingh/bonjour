@@ -112,6 +112,10 @@
     .text-secondary-color {
       @apply text-slate-600 dark:text-white/70;
     }
+
+    .svg-icon-img {
+      @apply rounded-full dark:filter dark:text-white dark:brightness-0 dark:invert;
+    }
 }
 
 @layer base {

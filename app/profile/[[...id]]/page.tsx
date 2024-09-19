@@ -7,7 +7,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 import { concatList, ScenceCode } from '@/constants/index';
 import { HomeIcon, LinkIcon, TrashIcon, PencilIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import ConfirmDeleteDialog from '@/components/ConfirmDeleteDialog';
 import FixedActionIcons, { ActionIcon, OnActionTapParams } from '@/components/FixedActionIcons';
 import { buildUrlWithParams, sleep } from '@/lib/utils';
@@ -103,21 +103,28 @@ const Profile: React.FC = () => {
         { icon: TrashIcon, action: 'delete', className: 'size-2 text-red-500' },
     ];
 
+    const router = useRouter();
     const handleActionTap = useCallback(({ actionItem }: OnActionTapParams) => {
         const { action } = actionItem;
 
-        if (action === 'delete') {
-            setOpenConfirmDialog(true);
-        } else if (action === 'copy') {
-            const { origin, pathname } = window.location;
-            const searchParams = { 
-                userId, 
-                fromUserId: currentUserId,
-                bonjourId, 
-                sceneCode: ScenceCode.COPY 
-            };
-            const shareUrl = buildUrlWithParams(`${origin}${pathname}`, searchParams);
-            copy(shareUrl);
+        switch (action) {
+            case 'delete':
+                setOpenConfirmDialog(true);
+                break;
+            case 'copy': 
+                const { origin, pathname } = window.location;
+                const searchParams = { 
+                    userId, 
+                    fromUserId: currentUserId,
+                    bonjourId, 
+                    sceneCode: ScenceCode.COPY 
+                };
+                const shareUrl = buildUrlWithParams(`${origin}${pathname}`, searchParams);
+                copy(shareUrl);
+            break;
+            case 'edit':  
+                router.push(`/profile/edit/${bonjourId}`);
+            break;
         }
     }, [userId, currentUserId, copy]);
 

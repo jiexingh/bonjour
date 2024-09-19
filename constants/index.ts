@@ -51,6 +51,7 @@ export const socialSnapList:SocialCardProps[] = [
         title: "GitHub",
         subtitle: "github.com",
         btnText: "Follow",
+        iconClassName:"dark:filter dark:text-white dark:brightness-0 dark:invert",
         buttonClassName: "bg-black text-white dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90"
     },
     {

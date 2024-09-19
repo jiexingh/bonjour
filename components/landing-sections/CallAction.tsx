@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from './ui/button'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
+import { Button } from '../ui/button';
 
 const CallAction = () => {
     const router = useRouter();

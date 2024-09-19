@@ -1,11 +1,11 @@
 "use client"
 
-import PhoneBox from "./PhoneBox";
 import { appendParamsToPath, cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import ProfileCard from "./ProfileCard";
+import ProfileCard from "../ProfileCard";
 import { concatList } from "@/constants";
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import PhoneBox from "../PhoneBox";
 
 const GetLinkButton = ({cuClassName, onClonClick}:{ cuClassName?:string, onClonClick?: () => void;}) => (
   <button onClick={onClonClick} className={
